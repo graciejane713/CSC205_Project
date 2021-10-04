@@ -1,0 +1,2 @@
+Deliverable 1 - Grace Palmer
+I had a difficult time with deliverable 1. It would work fine when it was a variation of Mr.Madeira's code, then I would try to clean it up using some of the bootstrap suggestions and I would end up with a blank webpage. Quite a few times I went back and forth between the code working and the code not working. I tried to go as simple as possible to avoid any complications or errors that I may be missing. I managed to get a page with the chart without any bakcround colors. The chart also sits at the same length as the web page. 
