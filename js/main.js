@@ -1,5 +1,5 @@
 
-let info=
+let courses= 
 [
     {"Line":81,"Department":"BUS","Number":344,"Section":1,"Title":"MANAGEMENT OF INFORMATION SYSTEMS","Faculty":"Richards, Gordon P.","Openings":2,"Capacity":30,"Status":"Open","Day":"MWF","StartTime":"1:25:00 PM","EndTime":"2:20 PM","Campus":" Main Campus","Building":" Science and Engineering","Room":" SE 341 Computer Science Lab","Credits":3,"Start Date":"8\/30\/2021","End Date":"12\/17\/2021\r\n"}
     ,{"Line":167,"Department":"CSC","Number":133,"Section":2,"Title":"SURVEY OF COMPUTER SCIENCE","Faculty":"Madeira, Scott","Openings":6,"Capacity":15,"Status":"Open","Day":"H","StartTime":"2:00:00 PM","EndTime":"4:50 PM","Campus":" Main Campus","Building":" Science and Engineering","Room":" SE 341 Computer Science Lab","Credits":0,"Start Date":"8\/30\/2021","End Date":"12\/17\/2021\r\n"}
@@ -13,38 +13,35 @@ let info=
 ]
 window.onload = (event) => 
 {
-       let table = document.getElementById("course-table")
-       let data = Object.keys(filteredData[0]);
-      generatePageTitle(table, data);
-     generatePage(table, filteredData);
-     
-    
-
+    alert(courses[5].Title);
+    console.log('The page is loaded.We are in the consol');
+    let filteredData = removeColumns(courses);
+    let table = document.getElementById("course-table")
+    let data = Object.keys(filteredData [4]);
+    generatePageTitle(table, data);
+    generatePage(table, filteredData);
 }
 
-function generatePageTitle(table, data)
+function generatePageTitle(table, data) 
 {
-     let pagetitle = table.createpPageTitle();
-    let row = pagetitle.insertRow();
-
-    for (let column of data)
+    let pgtitle = table.createTHead();
+    let row = pgtitle.insertRow();
+    for (let column of data) 
     {
-        let pT = document.createElement("pT");
+        let th = document.createElement("th");
         let text = document.createTextNode(column);
-
-        pT.appendChild(text);
-        row.appendChild(pT);
-      
+        th.appendChild(text);
+        row.appendChild(th);
     }
 }
 
-function generatePage(table, data)
+function generatePage(table, data) 
 {
-    let pageinfo= table.createPage();
-    for(let course of data)
+    let pgcontent = table.createTBody();
+    for (let course of data) 
     {
-        let row = pageinfo.insertRow();
-        for (key in course)
+        let row = pgcontent.insertRow();
+        for (key in course) 
         {
             let cell = row.insertCell();
             let text = document.createTextNode(course[key]);
@@ -53,7 +50,18 @@ function generatePage(table, data)
     }
 }
 
-
+function removeColumns(courses)
+{
+    courses.forEach(function (course)
+    {
+        delete course.openings;
+        delete course.building;
+        delete course.Capacity;
+        delete course.Campus;
+    });
+    return courses;
+}
+    
 
 
 
