@@ -1,0 +1,2 @@
+Deliverable 2 - Grace Palmer
+I basically took the code from deliverable 1 and removed the unnecessary hard coded information. Then I removed the line portion of the beginning. I then moved things around to look more appealing and be easier to understand. 
